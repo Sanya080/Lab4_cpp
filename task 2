@@ -1,0 +1,33 @@
+// Завдання 2, варіант 7
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int A, B;
+
+    cout << "Введіть два цілих числа A та B: ";
+    cin >> A >> B;
+
+    if (A > B)
+    {
+        int t = A;
+        A = B;
+        B = t;
+        cout << "Числа поміняно місцями, щоб A <= B" << endl;
+    }
+
+    cout << endl << "Квадрати чисел від " << A << " до " << B << ":" << endl;
+    cout << "-------------------------" << endl;
+
+    for (int x = A; x <= B; x++)
+    {
+        long long sq = (long long)x * x;
+        cout << setw(8) << x << "^2 = " << setw(12) << sq << endl;
+    }
+
+    cout << "-------------------------" << endl;
+
+    return 0;
+}
