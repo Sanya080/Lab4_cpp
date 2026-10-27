@@ -1,0 +1,27 @@
+// Завдання 1, варіант 7
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int A, B;
+
+    cout << "Введіть два цілих числа A та B: ";
+    cin >> A >> B;
+
+    bool oddA = (A % 2 != 0);
+    bool oddB = (B % 2 != 0);
+
+    cout << endl << "A = " << A << ", B = " << B << endl;
+    cout << "Число A " << (oddA ? "непарне" : "парне") << endl;
+    cout << "Число B " << (oddB ? "непарне" : "парне") << endl;
+
+    cout << endl << "Висловлення: \"Тільки одне з чисел A і B непарне\"" << endl;
+
+    if (oddA != oddB)
+        cout << "Результат: True" << endl;
+    else
+        cout << "Результат: False" << endl;
+
+    return 0;
+}
