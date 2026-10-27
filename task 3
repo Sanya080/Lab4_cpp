@@ -1,0 +1,58 @@
+// Завдання 3, варіант 7
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    double a, b, h;
+
+    cout << "Y = ln(x^2) + x^2 + 2" << endl;
+    cout << "Введіть початок проміжку a: ";
+    cin >> a;
+    cout << "Введіть кінець проміжку b: ";
+    cin >> b;
+    cout << "Введіть крок h: ";
+    cin >> h;
+
+    if (h <= 0)
+    {
+        cout << "Помилка: крок h має бути додатним!" << endl;
+        return 1;
+    }
+    if (a > b)
+    {
+        cout << "Помилка: a має бути не більшим за b!" << endl;
+        return 1;
+    }
+
+    int n = (int)floor((b - a) / h + 1e-9);
+
+    cout << endl;
+    cout << "      Таблиця значень функції Y = ln(x^2) + x^2 + 2" << endl;
+    cout << "+------------+------------------+" << endl;
+    cout << "|     x      |        Y         |" << endl;
+    cout << "+------------+------------------+" << endl;
+
+    for (int i = 0; i <= n; i++)
+    {
+        double x = a + i * h;
+
+        cout << "| " << fixed << setprecision(4) << setw(10) << x << " | ";
+
+        if (fabs(x) < 1e-12)
+            cout << "    не визначена";
+        else
+        {
+            double y = log(x * x) + x * x + 2;
+            cout << setw(16) << setprecision(6) << y;
+        }
+
+        cout << " |" << endl;
+    }
+
+    cout << "+------------+------------------+" << endl;
+
+    return 0;
+}
